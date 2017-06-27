@@ -1,0 +1,11 @@
+runtime: java7
+api_version: 1
+threadsafe: true
+
+handlers:
+- url: /
+  static_files: src/main/java/hello/HelloWorldConfiguration.java
+  upload: src/main/java/hello/HelloWorldConfiguration.java
+
+- url: /
+  static_dir: src
