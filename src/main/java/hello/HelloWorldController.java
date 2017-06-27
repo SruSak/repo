@@ -6,6 +6,8 @@ import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestMethod;
 import org.springframework.web.bind.annotation.ResponseBody;
 
+import com.fasterxml.jackson.databind.ObjectMapper;
+
 @Controller
 @RequestMapping("/webhook")
 public class HelloWorldController {
@@ -14,7 +16,7 @@ public class HelloWorldController {
     public @ResponseBody WebhookResponse webhook(@RequestBody String obj){
 
         System.out.println(obj);
-
+        ObjectMapper o=new ObjectMapper();
         return new WebhookResponse("Hello! " + obj, "Text " + obj);
-    }
+    }//webhook
 }
